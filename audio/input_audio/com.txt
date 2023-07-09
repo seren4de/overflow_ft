@@ -1,0 +1,1 @@
+tts --text "" --speaker_wav "Megan.wav" --language_idx 'en' --out_path "megan_10h30_output.wav" --model_name "tts_models/multilingual/multi-dataset/your_tts"
