@@ -5,3 +5,7 @@
 *.m4a
 *.wma
 *.aac
+
+# params
+*.pt
+*.npy

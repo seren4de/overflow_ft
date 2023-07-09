@@ -70,6 +70,23 @@ This will start, delete, and initialize a new MFA server, allowing you to use th
 
 ### Scripts ::
 
+- **train_overflow.py**::
+
+```bash
+(tts) ┌──(seren4de㉿Bitland)-[~/overflow_ft]
+└─$ python clean_.py                               
+                                                                                        
+(tts) ┌──(seren4de㉿Bitland)-[~/overflow_ft]
+└─$ python rmextmeta_py
+```
+
+
+```bash
+CUDA_VISIBLE_DEVICES="0" python train_overflow.py \
+    --config_path  ./config.json \
+    --restore_path  /home/hannibal/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
+
+
 - **split2sentences_.py**::
 
 ```bash
@@ -93,8 +110,8 @@ OR
 ```bash
 (aligner)
 └─$ mfa server init
- INFO     Initializing the global MFA database server...                                 
- INFO     Starting the global MFA database server...                                     
+ INFO     Initializing the global MFA database server...                               
+ INFO     Starting the global MFA database server...                                   
 waiting for server to start.... done
 server started
  INFO     global MFA database server started! 
