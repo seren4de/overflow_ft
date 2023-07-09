@@ -34,9 +34,8 @@ mfa server start
 mfa server delete
 mfa server init
 ```
+
 This will start, delete, and initialize a new MFA server, allowing you to use the aligner with your data.
-
-
 
 ### DATA structure for speakerX ::
 
@@ -63,18 +62,19 @@ This will start, delete, and initialize a new MFA server, allowing you to use th
 │       └── Unfollow_09.wav
 ```
 
-
-
 ### Directories ::
 
 `./text/`
 `./audio/`
 `./corpus_directory/`
 
-
-
 ### Scripts ::
 
+- **split2sentences_.py**::
+
+```bash
+python split2sentences_.py ./corpus_directory/
+```
 
 - **alignaudiotext_.py**::
 
@@ -93,8 +93,8 @@ OR
 ```bash
 (aligner)
 └─$ mfa server init
- INFO     Initializing the global MFA database server...                                   
- INFO     Starting the global MFA database server...                                       
+ INFO     Initializing the global MFA database server...                                 
+ INFO     Starting the global MFA database server...                                     
 waiting for server to start.... done
 server started
  INFO     global MFA database server started! 
@@ -103,7 +103,6 @@ server started
 ```bash
 mfa align --clean --single_speaker './corpus_directory' 'english_us_arpa' 'english_us_arpa' './corpus_directory'
 ```
-
 
 - **splitepub_.py**::
 
@@ -114,7 +113,6 @@ splits epub books into raw text chapters using BeautifulSoup lib
 ```bash
 python3 splitepub_.py ./text/input_text/Unfollow.epub ./text/input_text/
 ```
-
 
 - **mp32wav_.py**::
 
@@ -130,7 +128,6 @@ python3 mp32wav_.py ./audio/input_audio/chapters/unfollow/ ./audio/output_audio/
 mv ./audio/output_audio/unfollow/* ./corpus_directory/Speaker1/
 ```
 
-
 - **tokenize_.py**::
 
 ```
@@ -140,8 +137,6 @@ formats the transcript for each chapter by speaker, in this case we only have on
 ```bash
 python3 tokenize_.py
 ```
-
-
 
 ### Project structure ::
 
