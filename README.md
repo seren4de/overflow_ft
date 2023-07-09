@@ -80,12 +80,12 @@ This will start, delete, and initialize a new MFA server, allowing you to use th
 └─$ python rmextmeta_py
 ```
 
-
 ```bash
-CUDA_VISIBLE_DEVICES="0" python train_overflow.py \
-    --config_path  ./config.json \
-    --restore_path  /home/hannibal/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
+CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:25' python train_overflow.py \
+    --config_path ./config.json \
+    --restore_path /home/hannibal/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
 
+```
 
 - **split2sentences_.py**::
 
