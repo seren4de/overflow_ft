@@ -4,7 +4,7 @@ This repository contains a fine-tuned TTS overflow model for the Megan speaker. 
 
 ## Getting Started
 
-Before using the model, there are a few steps you need to follow to set up your environment.
+Before using the model, setup both [mfa](https://montreal-forced-aligner.readthedocs.io/en/latest/getting_started.html) and [tts](https://tts.readthedocs.io/en/latest/inference.html) in seperate virtual environements.
 
 ### Activate MFA Environment
 
@@ -44,20 +44,7 @@ This will start, delete, and initialize a new MFA server, allowing you to use th
 │   └── Speaker1
 │       ├── Unfollow_01.txt
 │       ├── Unfollow_01.wav
-│       ├── Unfollow_02.txt
-│       ├── Unfollow_02.wav
-│       ├── Unfollow_03.txt
-│       ├── Unfollow_03.wav
-│       ├── Unfollow_04.txt
-│       ├── Unfollow_04.wav
-│       ├── Unfollow_05.txt
-│       ├── Unfollow_05.wav
-│       ├── Unfollow_06.txt
-│       ├── Unfollow_06.wav
-│       ├── Unfollow_07.txt
-│       ├── Unfollow_07.wav
-│       ├── Unfollow_08.txt
-│       ├── Unfollow_08.wav
+│       ├── ...
 │       ├── Unfollow_09.txt
 │       └── Unfollow_09.wav
 ```
@@ -74,8 +61,8 @@ This will start, delete, and initialize a new MFA server, allowing you to use th
 
 ```bash
 (tts) ┌──(seren4de㉿Bitland)-[~/overflow_ft]
-└─$ python clean_.py                               
-                                                                                        
+└─$ python clean_.py                             
+                                                                                      
 (tts) ┌──(seren4de㉿Bitland)-[~/overflow_ft]
 └─$ python rmextmeta_py
 ```
@@ -85,11 +72,20 @@ CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:25' python t
     --config_path ./config.json \
     --restore_path /home/hannibal/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
 ```
+
 OR
-    
+ex1
+
 ```bash
-CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:512' python train_overflow.py --config_path /home/hannibal/overflow_ft/config.json --restore_path /home/hannibal/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
+CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:21' python train_overflow.py --config_path /home/hannibal/overflow_ft/config.json --restore_path /home/hannibal/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
 ```
+
+ex2
+
+```bash
+CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:21' python train_overflow.py --config_path /home/hannibal/overflow_ft/out/1e-5/config.json --restore_path /home/hannibal/overflow_ft/out/1e-5/checkpoint_21500.pth
+```
+
 - **split2sentences_.py**::
 
 ```bash
@@ -113,8 +109,8 @@ OR
 ```bash
 (aligner)
 └─$ mfa server init
- INFO     Initializing the global MFA database server...                               
- INFO     Starting the global MFA database server...                                   
+ INFO     Initializing the global MFA database server...                             
+ INFO     Starting the global MFA database server...                                 
 waiting for server to start.... done
 server started
  INFO     global MFA database server started! 
@@ -163,127 +159,101 @@ python3 tokenize_.py
 ```bash
 .
 ├── alignaudiotext_.py
-├── audio
-│   ├── input_audio
-│   │   ├── chapters
-│   │   ├── com.txt
-│   │   ├── megan13.mp3
-│   │   ├── test_outputs
-│   │   └── test_scripts
-│   └── output_audio
-│       └── unfollow
-├── corpus_directory
-│   └── Speaker1
-│       ├── Unfollow_011.txt
-│       ├── Unfollow_011.wav
-│       ├── Unfollow_012.TextGrid
-│       ├── Unfollow_012.txt
-│       ├── Unfollow_012.wav
-│       ├── Unfollow_021.TextGrid
-│       ├── Unfollow_021.txt
-│       ├── Unfollow_021.wav
-│       ├── Unfollow_022.TextGrid
-│       ├── Unfollow_022.txt
-│       ├── Unfollow_022.wav
-│       ├── Unfollow_031.TextGrid
-│       ├── Unfollow_031.txt
-│       ├── Unfollow_031.wav
-│       ├── Unfollow_032.TextGrid
-│       ├── Unfollow_032.txt
-│       ├── Unfollow_032.wav
-│       ├── Unfollow_033.TextGrid
-│       ├── Unfollow_033.txt
-│       ├── Unfollow_033.wav
-│       ├── Unfollow_041.TextGrid
-│       ├── Unfollow_041.txt
-│       ├── Unfollow_041.wav
-│       ├── Unfollow_042.TextGrid
-│       ├── Unfollow_042.txt
-│       ├── Unfollow_042.wav
-│       ├── Unfollow_043.TextGrid
-│       ├── Unfollow_043.txt
-│       ├── Unfollow_043.wav
-│       ├── Unfollow_051.TextGrid
-│       ├── Unfollow_051.txt
-│       ├── Unfollow_051.wav
-│       ├── Unfollow_052.TextGrid
-│       ├── Unfollow_052.txt
-│       ├── Unfollow_052.wav
-│       ├── Unfollow_053.TextGrid
-│       ├── Unfollow_053.txt
-│       ├── Unfollow_053.wav
-│       ├── Unfollow_061.TextGrid
-│       ├── Unfollow_061.txt
-│       ├── Unfollow_061.wav
-│       ├── Unfollow_062.TextGrid
-│       ├── Unfollow_062.txt
-│       ├── Unfollow_062.wav
-│       ├── Unfollow_063.TextGrid
-│       ├── Unfollow_063.txt
-│       ├── Unfollow_063.wav
-│       ├── Unfollow_064.TextGrid
-│       ├── Unfollow_064.txt
-│       ├── Unfollow_064.wav
-│       ├── Unfollow_071.TextGrid
-│       ├── Unfollow_071.txt
-│       ├── Unfollow_071.wav
-│       ├── Unfollow_072.TextGrid
-│       ├── Unfollow_072.txt
-│       ├── Unfollow_072.wav
-│       ├── Unfollow_073.TextGrid
-│       ├── Unfollow_073.txt
-│       ├── Unfollow_073.wav
-│       ├── Unfollow_074.TextGrid
-│       ├── Unfollow_074.txt
-│       ├── Unfollow_074.wav
-│       ├── Unfollow_081.TextGrid
-│       ├── Unfollow_081.txt
-│       ├── Unfollow_081.wav
-│       ├── Unfollow_082.TextGrid
-│       ├── Unfollow_082.txt
-│       ├── Unfollow_082.wav
-│       ├── Unfollow_083.TextGrid
-│       ├── Unfollow_083.txt
-│       ├── Unfollow_083.wav
-│       ├── Unfollow_084.TextGrid
-│       ├── Unfollow_084.txt
-│       ├── Unfollow_084.wav
-│       ├── Unfollow_085.TextGrid
-│       ├── Unfollow_085.txt
-│       ├── Unfollow_085.wav
-│       ├── Unfollow_091.TextGrid
-│       ├── Unfollow_091.txt
-│       ├── Unfollow_091.wav
-│       ├── Unfollow_092.TextGrid
-│       ├── Unfollow_092.txt
-│       ├── Unfollow_092.wav
-│       ├── Unfollow_093.TextGrid
-│       ├── Unfollow_093.txt
-│       ├── Unfollow_093.wav
-│       ├── Unfollow_094.TextGrid
-│       ├── Unfollow_094.txt
-│       ├── Unfollow_094.wav
-│       ├── Unfollow_095.TextGrid
-│       ├── Unfollow_095.txt
-│       └── Unfollow_095.wav
-├── LICENSE
-├── mp32wav_.py
 ├── README.md
+├── rmextmeta_py
 ├── split2sentences_.py
 ├── splitepub_.py
-├── text
-│   ├── input_text
-│   │   ├── Unfollow_01.txt
-│   │   ├── Unfollow_02.txt
-│   │   ├── Unfollow_03.txt
-│   │   ├── Unfollow_04.txt
-│   │   ├── Unfollow_05.txt
-│   │   ├── Unfollow_06.txt
-│   │   ├── Unfollow_07.txt
-│   │   ├── Unfollow_08.txt
-│   │   ├── Unfollow_09.txt
-│   │   └── Unfollow.epub
-│   └── output_text
-│       └── prepcript_unf_8.txt
-└── tokenize_.py
+├── test.sh
+├── tokenize_.py
+├── train_overflow.py
+├── tree.txt
+├── format.py
+├── LICENSE
+├── mp32wav_.py
+├── clean_.py
+├── config.json
+├── audio
+│   ├── input_audio
+│   │   ├── chapters
+│   │   │   ├── onelaststop
+│   │   │   └── unfollow
+│   └── output_audio
+│       ├── testlr
+│       │   ├── 1e-321000.wav
+│       │   ├── ...
+│       │   └── 1e-521500.wav
+│       └── unfollow
+│           ├── Unfollow_01.wav
+│           ├── ...
+│           └── Unfollow_09.wav
+├── corpus_directory
+│   └── Speaker1
+│       ├── Unfollow_012.TextGrid
+│       ├── Unfollow_012.txt
+│       ├── Unfollow_012.wav
+│       ├── ...
+│       ├── Unfollow_095.TextGrid
+│       ├── Unfollow_095.txt
+│       └── Unfollow_095.wav
+├── MyTTSDataset
+│   ├── metadata.csv
+│   └── wavs
+│       ├── resample_.py
+│       ├── Unfollow_012_100.wav
+│       ├── Unfollow_012_101.wav
+│       ├── Unfollow_012_102.wav
+│       ├── ...
+│       ├── Unfollow_095_98.wav
+│       ├── Unfollow_095_99.wav
+│       └── Unfollow_095_9.wav
+├── out
+│   ├── 1e-3
+│   │   ├── checkpoint_21000.pth
+│   │   ├── checkpoint_21500.pth
+│   │   ├── config.json
+│   │   ├── events.out.tfevents.1688974945.Bitland
+│   │   ├── trainer_0_log.txt
+│   │   └── train_overflow.py
+│   ├── 1e-4
+│   │   ├── checkpoint_21000.pth
+│   │   ├── checkpoint_21500.pth
+│   │   ├── config.json
+│   │   ├── events.out.tfevents.1688970687.Bitland
+│   │   ├── trainer_0_log.txt
+│   │   └── train_overflow.py
+│   ├── 1e-5
+│   │   ├── checkpoint_21000.pth
+│   │   ├── checkpoint_21500.pth
+│   │   ├── config.json
+│   │   ├── events.out.tfevents.1688965154.Bitland
+│   │   ├── trainer_0_log.txt
+│   │   └── train_overflow.py
+│   ├── lj_parameters.pt
+│   ├── overflow_ljspeech-July-10-2023_10+09AM-eb61a8e
+│   │   ├── checkpoint_22000.pth
+│   │   ├── config.json
+│   │   ├── events.out.tfevents.1688980192.Bitland
+│   │   ├── trainer_0_log.txt
+│   │   └── train_overflow.py
+│   └── phoneme_cache
+│       ├── I3dhdnMvVW5mb2xsb3dfMDc0Xzc0_phoneme.npy
+│       ├── ...
+│       └── I3dhdnMvVW5mb2xsb3dfMDYzXzYz_phoneme.npy
+└── text
+    ├── input_text
+    │   ├── unf_8.txt
+    │   ├── Unfollow_01.txt
+    │   ├── Unfollow_02.txt
+    │   ├── Unfollow_03.txt
+    │   ├── Unfollow_04.txt
+    │   ├── Unfollow_05.txt
+    │   ├── Unfollow_06.txt
+    │   ├── Unfollow_07.txt
+    │   ├── Unfollow_08.txt
+    │   ├── Unfollow_09.txt
+    │   └── Unfollow.epub
+    └── output_text
+        └── prepcript_unf_8.txt
+
+
 ```

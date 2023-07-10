@@ -9,3 +9,4 @@
 # params
 *.pt
 *.npy
+*.pth
