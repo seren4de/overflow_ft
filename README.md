@@ -243,13 +243,7 @@ python3 tokenize_.py
     ├── input_text
     │   ├── unf_8.txt
     │   ├── Unfollow_01.txt
-    │   ├── Unfollow_02.txt
-    │   ├── Unfollow_03.txt
-    │   ├── Unfollow_04.txt
-    │   ├── Unfollow_05.txt
-    │   ├── Unfollow_06.txt
-    │   ├── Unfollow_07.txt
-    │   ├── Unfollow_08.txt
+    │   ├── ...
     │   ├── Unfollow_09.txt
     │   └── Unfollow.epub
     └── output_text
