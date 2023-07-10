@@ -10,11 +10,13 @@ from TTS.tts.models.overflow import Overflow
 from TTS.tts.utils.text.tokenizer import TTSTokenizer
 from TTS.utils.audio import AudioProcessor
 
-output_path = os.path.dirname(os.path.abspath(__file__))
+import torch
+
+output_path = os.path.dirname(os.path.abspath(__file__))+ "/out/"
 
 # init configs
 dataset_config = BaseDatasetConfig(
-    formatter="ljspeech", meta_file_train="metadata.csv", path="/home/hannibal/overflow_ft/MyTTSDataset"
+    formatter="ljspeech", meta_file_train="metadata.csv", path="./MyTTSDataset"
     )
 
 audio_config = BaseAudioConfig(
@@ -33,10 +35,10 @@ audio_config = BaseAudioConfig(
 config = OverflowConfig(  # This is the config that is saved for the future use
     run_name="overflow_ljspeech",
     audio=audio_config,
-    batch_size=30,
-    eval_batch_size=16,
-    num_loader_workers=4,
-    num_eval_loader_workers=4,
+    batch_size=4,
+    eval_batch_size=1,
+    num_loader_workers=8,
+    num_eval_loader_workers=2,
     run_eval=True,
     test_delay_epochs=-1,
     epochs=1000,
@@ -52,6 +54,7 @@ config = OverflowConfig(  # This is the config that is saved for the future use
     mixed_precision=True,
     output_path=output_path,
     datasets=[dataset_config],
+    lr=0.00001
 )
 
 # INITIALIZE THE AUDIO PROCESSOR
@@ -93,4 +96,5 @@ trainer = Trainer(
     eval_samples=eval_samples,
     gpu=1,
 )
+torch.cuda.empty_cache()
 trainer.fit()

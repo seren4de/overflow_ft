@@ -85,7 +85,11 @@ CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:25' python t
     --config_path ./config.json \
     --restore_path /home/hannibal/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
 ```
-
+OR
+    
+```bash
+CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:512' python train_overflow.py --config_path /home/hannibal/overflow_ft/config.json --restore_path /home/hannibal/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
+```
 - **split2sentences_.py**::
 
 ```bash
