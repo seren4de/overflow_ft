@@ -10,3 +10,5 @@
 *.pt
 *.npy
 *.pth
+
+*.Bitland
