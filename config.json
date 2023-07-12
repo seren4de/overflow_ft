@@ -24,11 +24,11 @@
     "distributed_url": "tcp://localhost:54321",
     "mixed_precision": true,
     "epochs": 1000,
-    "batch_size": 6,
+    "batch_size": 4,
     "eval_batch_size": 1,
     "grad_clip": 40000.0,
     "scheduler_after_epoch": true,
-    "lr": 0.000001,
+    "lr": 0.001,
     "optimizer": "Adam",
     "optimizer_params": {
         "weight_decay": 1e-06
