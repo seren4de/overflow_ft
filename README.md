@@ -1,6 +1,6 @@
 # Fine-Tuned TTS Overflow Model for Megan Speaker
 
-This repository contains a fine-tuned TTS overflow model for the Megan speaker. The model has been trained to accurately reproduce the voice and speaking style of Megan, providing high-quality synthesized speech.
+This repository contains a fine-tuned TTS overflow model for a given speaker, based on their audiobook, providing high-quality synthesized speech.
 
 ## Getting Started
 
@@ -61,8 +61,8 @@ This will start, delete, and initialize a new MFA server, allowing you to use th
 
 ```bash
 (tts) ┌──(seren4de㉿Bitland)-[~/overflow_ft]
-└─$ python clean_.py                             
-                                                                                      
+└─$ python clean_.py                           
+                                                                                    
 (tts) ┌──(seren4de㉿Bitland)-[~/overflow_ft]
 └─$ python rmextmeta_py
 ```
@@ -109,8 +109,8 @@ OR
 ```bash
 (aligner)
 └─$ mfa server init
- INFO     Initializing the global MFA database server...                             
- INFO     Starting the global MFA database server...                                 
+ INFO     Initializing the global MFA database server...                           
+ INFO     Starting the global MFA database server...                               
 waiting for server to start.... done
 server started
  INFO     global MFA database server started! 

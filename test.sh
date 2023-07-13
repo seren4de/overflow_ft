@@ -3,7 +3,7 @@
 # This is a test script to test the checkpoint after fine tunning the overflow tts model with the new data; the checkpoints are saved under ./out/overflow_ljspeech-*/checkpoint_*.pth
 
 #tested phrases
-test_phrase="The quick brown fox jumps over the lazy dog. This sentence contains all the letters of the English alphabet. It is often used to test the display of fonts and the accuracy of keyboards. The sentence has been in use since at least the late 19th century, and it remains a popular tool for testing today."
+test_phrase="The quick brown fox jumps over the lazy dog. The rain in Spain falls mainly on the plain. How much wood would a woodchuck chuck if a woodchuck could chuck wood. She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I'm sure she sells seashore shells. Peter Piper picked a peck of pickled peppers. A peck of pickled peppers Peter Piper picked. If Peter Piper picked a peck of pickled peppers, where's the peck of pickled peppers Peter Piper picked."
 
 
 vocoder_name="vocoder_models/en/ljspeech/hifigan_v2"
@@ -16,7 +16,7 @@ wav=".wav"
 conf="/config.json"
 
 #tested checkpoints
-cps=("29500" "30000" "30500" "31000" "31500" "32000" "32500" "33000" "33500" "34000" "34500" "35000" "35500" "36000" "36500")
+cps=("51000" "50500")
 
 #tested learning rates
 lrs=("1e-3") 
