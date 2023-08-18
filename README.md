@@ -1,4 +1,4 @@
-# Fine-Tuned TTS Overflow Model for Megan Speaker
+# Fine-Tuned TTS Overflow Model for a given Speaker
 
 This repository contains a fine-tuned TTS overflow model for a given speaker, based on their audiobook, providing high-quality synthesized speech.
 
