@@ -98,3 +98,4 @@ trainer = Trainer(
 )
 torch.cuda.empty_cache()
 trainer.fit()
+torch.cuda.empty_cache()

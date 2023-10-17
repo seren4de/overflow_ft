@@ -3,7 +3,9 @@
 # This is a test script to test the checkpoint after fine tunning the overflow tts model with the new data; the checkpoints are saved under ./out/overflow_ljspeech-*/checkpoint_*.pth
 
 #tested phrases
-test_phrase="The quick brown fox jumps over the lazy dog. The rain in Spain falls mainly on the plain. How much wood would a woodchuck chuck if a woodchuck could chuck wood. She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I'm sure she sells seashore shells. Peter Piper picked a peck of pickled peppers. A peck of pickled peppers Peter Piper picked. If Peter Piper picked a peck of pickled peppers, where's the peck of pickled peppers Peter Piper picked."
+test_phrase="my mother exclaimed with a slight shake of the head. She leaned down to take the paintbrushes from my grubby hands, and for a moment her blue eyes were level with mine—now wide with mischief imagining what it might be like to take a drink from a fire hydrant. “You’re so much like her.” She grinned and kissed my cheek.
+I only had a fistful of years under my paint smock back then, but already—and to my greatest delight and honor—the comparisons to my aunt Margie came swift and steady: big hair, big voice, big personality. “Big personality” was sometimes code for “big drama,” but I didn’t know that yet. I adored Margie, and from the way my mother, grandmother, and the rest of my aunts spoke of her, I knew this resemblance to be a very good thing. “She has such beautiful, beautiful hair,” said one. “She is so sharp, just smart as a whip,” said another. “You sure do talk a lot,” said most of them. I couldn’t seem to stop myself, though it didn’t often occur to me to try. Mostly the words tumbling around inside my head mirrored the unruly curls that sat atop it: copious and uncontained, inevitably springing loose from every paltry attempt at confinement.
+It fell to my poor mother to shoulder the yeoman’s share of the burden this created."
 
 
 vocoder_name="vocoder_models/en/ljspeech/hifigan_v2"
@@ -16,7 +18,7 @@ wav=".wav"
 conf="/config.json"
 
 #tested checkpoints
-cps=("51000" "50500")
+cps=("55500" "56000" "56500")
 
 #tested learning rates
 lrs=("1e-3") 

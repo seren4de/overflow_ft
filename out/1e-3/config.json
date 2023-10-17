@@ -178,6 +178,6 @@
     "r": 1,
     "use_d_vector_file": false,
     "use_speaker_embedding": false,
-    "restore_path": "/home/hannibal/overflow_ft/out/1e-3/checkpoint_46000.pth",
+    "restore_path": "/home/hannibal/overflow_ft/out/1e-3/checkpoint_51000.pth",
     "github_branch": "* main"
 }
