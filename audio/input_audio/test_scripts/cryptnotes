@@ -1,3 +1,0 @@
-openssl enc -aes-256-cbc -salt -pbkdf2 -in <input-file> -out <output-file> -k <password>
-openssl enc -d -aes-256-cbc -pbkdf2 -in <input-file> -out <output-file> -k <password>
-
